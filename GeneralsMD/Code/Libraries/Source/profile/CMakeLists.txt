@@ -27,3 +27,5 @@ target_sources(profile PRIVATE
 	profile_cmd.cpp
 	profile_doc.h
 )
+
+set_target_properties(profile PROPERTIES OUTPUT_NAME $<IF:$<CONFIG:Debug>,profiledebug,profile>)

@@ -43,9 +43,9 @@ if((WIN32 OR "${CMAKE_SYSTEM}" MATCHES "Windows") AND ${CMAKE_SIZEOF_VOID_P} EQU
     add_subdirectory(Dependencies/BinkStub)
     add_subdirectory(Dependencies/MilesStub)
     add_subdirectory(Dependencies/STLPort)
-
-    link_directories(Dependencies/DX8SDK)
-    include_directories(Dependencies/DX8SDK)
+    include_directories(Dependencies/DX90SDK/Include)
+    link_directories(Dependencies/DX90SDK/Lib)
+    link_directories(Dependencies/DbgHelp/Lib)
 endif()
 
 include(FetchContent)
@@ -57,6 +57,9 @@ FetchContent_Declare(
     GIT_TAG        6f83d85d6d2e2d9a430301aeef5134578d0ecfcd
 )
 FetchContent_MakeAvailable(gamespy)
+
+include(cmake/lzhl.cmake)
+include(cmake/zlib.cmake)
 
 # Do we want to build extra SDK stuff or just the game binary?
 option(THYME_ZEROHOUR_PROJECT "Build Zero Hour code." ON)

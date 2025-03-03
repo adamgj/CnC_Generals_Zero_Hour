@@ -9,6 +9,8 @@ set(WWDOWNLOAD_SRC
     downloaddefs.h
     ftp.h
     ftpdefs.h
+    Ftp.h
+    FtpDefs.h
     Registry.h
     urlBuilder.h
 )

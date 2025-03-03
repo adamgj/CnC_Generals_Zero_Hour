@@ -1,3 +1,8 @@
+# Ignore everything starting with dot, except git files.
+.*
+!.gitignore
+!.gitattributes
+
 *.user
 *.ncb
 /build*
